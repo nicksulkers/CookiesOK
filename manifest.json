@@ -1,0 +1,40 @@
+{
+	"background": {
+		"scripts": ["scripts/background.js"]
+	},
+	"content_scripts": [
+		{
+			"js": ["scripts/pre.js"],
+			"matches": ["<all_urls>"],
+			"run_at": "document_start"
+		},
+		{
+			"js": [
+				"scripts/cookiesok.js"
+			],
+			"matches": ["<all_urls>"],
+			"run_at": "document_idle"
+		}
+	],
+	"description": "CookiesOK aims to automatically accept cookies on websites that are affected by the recent (26-02-2011) EU cookie laws.",
+	"homepage_url": "http://www.cookiesok.com",
+	"icons": {
+		"128": "images/icon128.png",
+		"48": "images/icon48.png",
+		"32": "images/icon32.png",
+		"16": "images/icon16.png"
+	},
+	"manifest_version": 2,
+	"name": "CookiesOK",
+	"options_page": "pages/options/index.html",
+	"permissions": [
+		"http://*/*",
+		"https://*/*",
+		"storage",
+		"webRequest",
+		"webRequestBlocking",
+		"contextMenus"
+	],
+	"default_locale": "en",
+	"version": "5"
+}

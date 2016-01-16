@@ -1,0 +1,140 @@
+html, body {
+	height: 100%;
+}
+
+body {
+	font-family: arial, helvetica, sans-serif;
+	font-size: 14px;
+	margin: 25px;
+}
+
+body {
+	background: url('data:image/jpeg;base64,%2F9j%2F4QAYRXhpZgAASUkqAAgAAAAAAAAAAAAAAP%2FsABFEdWNreQABAAQAAABQAAD%2F7gAOQWRvYmUAZMAAAAAB%2F9sAhAACAgICAgICAgICAwICAgMEAwICAwQFBAQEBAQFBgUFBQUFBQYGBwcIBwcGCQkKCgkJDAwMDAwMDAwMDAwMDAwMAQMDAwUEBQkGBgkNCwkLDQ8ODg4ODw8MDAwMDA8PDAwMDAwMDwwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAz%2FwAARCABkAGQDAREAAhEBAxEB%2F8QAZAABAQEBAAAAAAAAAAAAAAAAAQACCQEBAAAAAAAAAAAAAAAAAAAAABAAAgEDBAEEAgICAwAAAAAAAREhADECQVFhEiJxgTJCkaHwwbHR8WJTEQEAAAAAAAAAAAAAAAAAAAAA%2F9oADAMBAAIRAxEAPwDvGWDplgRM60GQEBAlP%2Fmg1LaIdwL0GYQuTY%2BlBYhoAZHj9RQXkQGW4IMFigRBT6kiAdXQSQgZAC2V4OlAMjG5I0NpFBQSFDMuzSoJSJLRGRH6oJgZhpmxEGgex7Ln5a0Fyrto60BYY6IEEc0DrGwBwG%2FFBAkAEWdjzNAG5gRKF%2FagiwAySoHI5oGWQVbx19KAxHikiCCCNaBcGSCC2Lmdt6CyEyDk78%2BlBXB11R4oL5gIjDJsPegew7dvulQZN7AGRaOKCBjyx2ehB1oEoHykO8UEAQ1wHu7UFKIIGWB%2FIoJZAJfHSggDdIXG1qAOPj5YrK5TRO%2FFA5CxOXUkSbvY0F2JAJ8vrkNnrQBYNgMjjugVQILC6ogHWglquXFBCyGTxZAe1BQO2Be41VBSNiCAnyZFAoMIwbBbaUGAB5QeuUKgoAQ8hzBjmgUJBE3c%2FsUEIAOORRsRIoIEDRo6cbigTwOsyLCKCfl4wUXiaC3ynrkETtzQDjSy782tvQJAZYPXJ2nigCSAJYiPegUCDoygf6oDHJFZ7xlvQKBAuRkWI1dBNnH7DJ%2Fmggfie2WOWOqEigE8UxZlXiaCM%2BRJGS%2BQF6BIJYIZBg7q9BEG3r0c0AIBxEOwtQa7auF2SmgCUSsSCLzpvQM7FS8VHqDQZ8QDdG%2F9MUCymPIan19aCR%2BQHLEF0Afk5BBb3oEkByQ21QQcF9uvieRQAD7AAgZARYg0CwYymdW5igP%2BnYEiceRrQJ7q5IUA6Ec0CyvhPW%2FFADyMicVfY7GgMbY%2BM4nyX%2BqBAIB6oAAnnegiwsgYy2kKgAVlbxI8xedxQRsHcMDYigWxYjcX9xQUTJtr%2BKAFplGfSgSEupLxMB8UEToYGj0%2FFAT4kazAPvQai82S43oAonqbzLoBggk%2BOQN%2F7oIgDLtjC2mDQIU9bFnFROxFAaD6uCFLoIfbqUflj7waBQ40MUE0USWNx%2FL0B1uGAdKBQiBi7gCRQa1RZBU6EWoMKxxuCSL%2BlAMKxSs9NnQbnbst1QZBABM9bHHbmg0AocHagywcZjK5y19aBNkSQSjbXegm0SgYP42oBwDBIuN%2FegZlBwFzQRHyWIkXBuKDOXDEPEmQ9RQJUEjgnigl1BD7D6u496B6%2FZG9tPzQQDZxAdziqAFgCY34oKcbsEa2tQIIKd8oOvNBAZAoZPHT2oJ5AEvLICEQP80Bb4wDoRQMdgLHEwDrFBCUC9GgoNjQEojLIOz3W9A%2Bd8T2BFqC0uQMgRQKP%2Fqei7cvagyOzaM3e%2BlAp9oBExqItQTTgrYHUjY0EG0L3xJIRPpQCcpEQRe9Ah6hnUiKCGuOrRxNpoJvxMEf43dAGD2BCSKuFvQMEFWKkaUAGxDgsWvqDQUdjKi6iKCU9YaT4oFsB5emVwaABCLAk6H80Erq2UMDazoGSNIBfCoLyFvKx6oWoKw1glMaGgdoEGE1trQZLABJAQnEzegWHaCJFqBARIMfxCgziX0GRLaB14oEHIGQwfzQU7Hqr8O1BGx6fNTtQJSlWDe%2BlBnC8vVp0ENU0j8qCjx7P22oIP7tSndUEV9bx2X6oNalPqvJ29qDE9fL9%2Fqg2E%2FHaVQE9Jb7eKvQOvg9HtQZh%2FXr770H%2F9k%3D');
+}
+
+.logo {
+	float: left;
+	width: 110px;
+	margin-right: 20px;
+}
+
+h1 {
+	color: #000;
+	margin: 0;
+	font-style: normal;
+	font-weight: 900;
+	font-family: Alegreya;
+	font-size: 60px;
+	letter-spacing: 2px;
+	line-height: 1.2950819672131149em;
+}
+
+h1 > span {
+	color: rgb(0, 201, 0);
+}
+
+h2 {
+	font-style: normal;
+	font-weight: 700;
+	font-family: 'Alegreya SC';
+	font-size: 25px;
+	line-height: 25px;
+	color: rgba(255, 114, 0, 1.00);
+	margin: 0;
+}
+
+.panel {
+	background: #FFF;
+	border: 1px solid #DDD;
+	-webkit-border-radius: 2px;
+	border-radius: 2px;
+	-webkit-box-shadow: 0 0 8px 2px rgba(0, 0, 0, 0.1);
+	box-shadow: 0 0 8px 2px rgba(0, 0, 0, 0.1);
+	padding: 20px;
+	color: #333;
+	width: 800px;
+	margin: 10px auto;
+}
+
+.footer-panel {
+	text-align: center;
+}
+
+.options-panel {
+	line-height: 2em;
+}
+
+.options-panel th,
+.options-panel td {
+	vertical-align: top;
+}
+
+.options-description {
+	line-height: normal;
+	font-style: italic;
+	font-size: 80%;
+}
+
+.options-panel th {
+	white-space: nowrap;
+	text-align: right;
+	width: 1%;
+	padding: 8px 15px 10px 10px;
+}
+
+.options-panel td {
+	width: 99%;
+	padding: 10px;
+}
+
+.options-panel label.indent {
+	margin-left: 24px;
+}
+
+.options-panel #cz-keyboard-shortcuts-char {
+	margin: 0;
+	height: 24px;
+}
+
+.options-panel #cz-keyboard-shortcut-modifier-label {
+	display: inline-block;
+	height: 22px;
+	line-height: 22px;
+	margin-left: 12px;
+	border: 1px solid #D8D8D8;
+	background: #FAFAFA;
+	padding: 0px 4px;
+}
+
+.options-panel .disabled {
+	color: #999;
+}
+
+#footer {
+	margin: 10px 15px;
+}
+
+#save-button {
+	font-weight: bold;
+}
+
+#status {
+	margin-left: 5px;
+	color: #02893D;
+	font-weight: bold;
+}
+
+#about-panel {
+	line-height: 1.5em;
+}
+
+#about-panel h2 {
+	font-size: 15px;
+	padding: 0;
+	margin: 0;
+	margin: 18px 0 3px 0;
+}
+
+#about-panel h2.first {
+	margin-top: 0;
+}
