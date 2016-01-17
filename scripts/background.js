@@ -5,11 +5,14 @@ function downloadDatabase() {
 	var xhttp = new XMLHttpRequest();
 	xhttp.onreadystatechange = function () {
 		if (xhttp.readyState == 4 && xhttp.status == 200) {
-			database.websites = JSON.parse(xhttp.responseText);
-			database.updated = new Date();
+			var result = JSON.parse(xhttp.responseText);
+			if(result.success) {
+				database.websites = result.data;
+				database.updated = new Date();
+			}
 		}
 	};
-	xhttp.open("GET", "https://cookiesok.com/database", true);
+	xhttp.open("GET", "https://cookiesok.com/5/database", true);
 	xhttp.send();
 }
 

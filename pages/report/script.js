@@ -38,7 +38,7 @@ document.getElementById("submitReport").addEventListener('click', function(){
 			document.getElementById('formPanel').style.display = 'none';
 		}
 	}
-	xmlhttp.open("POST", "http://cookiesok.com/report.php", true);
+	xmlhttp.open("POST", "http://cookiesok.com/5/report", true);
 	xmlhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
 	xmlhttp.send("url=" + escape(url.value) + "&email=" + escape(email.value) + "&notes=" + escape(notes.value));
 	notes.value = '';
