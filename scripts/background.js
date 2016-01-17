@@ -5,11 +5,14 @@ function downloadDatabase() {
 	var xhttp = new XMLHttpRequest();
 	xhttp.onreadystatechange = function () {
 		if (xhttp.readyState == 4 && xhttp.status == 200) {
-			database.websites = JSON.parse(xhttp.responseText);
-			database.updated = new Date();
+			var result = JSON.parse(xhttp.responseText);
+			if(result.success) {
+				database.websites = result.data;
+				database.updated = new Date();
+			}
 		}
 	};
-	xhttp.open("GET", "https://cookiesok.com/database", true);
+	xhttp.open("GET", "https://cookiesok.com/5/database", true);
 	xhttp.send();
 }
 
@@ -69,8 +72,23 @@ chrome.runtime.onInstalled.addListener(function (details) {
 
 chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
 	switch(request.action){
-		case "kindly-requesting-the-database-oh-pretty-please":
-			sendResponse({database: database.websites});
+		case "getDomainOrders":
+			var hostname = request.hostname;
+			if (hostname.indexOf('www.') === 0)
+				hostname = hostname.substr(4);
+
+			var orders = database.websites[hostname];
+			if (!orders && hostname.match('.')) {
+				var tmpHostname = hostname.split(".");
+				tmpHostname[0] = '*';
+				tmpHostname = tmpHostname.join('.');
+				orders = database.websites[tmphostname];
+			}
+
+			if(orders)
+				sendResponse({success: true, orders: orders});
+			else
+				sendResponse({success: false});
 			break;
 	}
 });

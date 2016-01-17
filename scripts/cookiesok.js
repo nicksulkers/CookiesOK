@@ -5,7 +5,7 @@
 	var attemptsLimit = 10;
 
 	function log(obj) {
-		console.log(obj);
+		//console.log(obj);
 	}
 
 	function performOrder(orders, attempt) {
@@ -18,7 +18,7 @@
 		log('Searching target DOM: document.querySelector("' + frames[0] + '")');
 		var target = document.querySelector(frames[0]);
 
-		for (i = 1; target && i < frames.length; ++i) {
+		for (var i = 1; target && i < frames.length; ++i) {
 			try {
 				log('.querySelector("' + frames[i] + '")');
 				target = target.contentWindow.document.querySelector(frames[i])
@@ -58,25 +58,14 @@
 		head.removeChild(script);
 	}, 15);
 
-	chrome.runtime.sendMessage({"action": "kindly-requesting-the-database-oh-pretty-please"}, function (response) {
-		//current domain minus www.
-		var hostname = location.hostname;
-		if (hostname.indexOf('www.') === 0)
-			hostname = hostname.substr(4);
-		log('Current domain = ' + hostname);
+	//retrieve database from background
+	log('Looking up ' + location.hostname + ' in database');
+	chrome.runtime.sendMessage({"action": "getDomainOrders", "hostname": location.hostname}, function (result) {
+		log(result);
+		if (!result.success)
+			return;
 
-		//match database for domain, alternatively perform wildcard check
-		var orders = response.database[hostname];
-		log('Searching for orders...');
-		if (!orders && hostname.match('.')) {
-			var tmphostname = hostname.split(".");
-			tmphostname[0] = '*';
-			tmphostname = tmphostname.join('.');
-			orders = response.database[tmphostname];
-			log('Performing wildcard check...');
-		}
-
-		//if there was a match, execute
+		var orders = result.orders;
 		if (orders) {
 			log("Orders found...")
 			if (orders.action)
