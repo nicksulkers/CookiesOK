@@ -82,7 +82,7 @@ chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
 				var tmpHostname = hostname.split(".");
 				tmpHostname[0] = '*';
 				tmpHostname = tmpHostname.join('.');
-				orders = database.websites[tmphostname];
+				orders = database.websites[tmpHostname];
 			}
 
 			if(orders)
