@@ -15,7 +15,7 @@
 		"message": "Will be submitted with any websites you report if entered. You'll receive a confirmation e-mail after your report has been handled."
 	},
 	"options_message_initial_welcome":{
-		"message": "<h2>Welcome!</h2>Thank you for installing CookiesOK. This is the options page, you may configure some of the behaviour of CookiesOK here. Please review and adjust the options below to your liking.<br/>If you ever need to return to this page, you can do so through the settings page of Google Chrome.<br/>If you enjoy using CookiesOK, please consider making a donation."
+		"message": "<h2>Welcome!</h2>Thank you for installing CookiesOK. This is the options page, you may configure some of the behaviour of CookiesOK here. Please review and adjust the options below to your liking.<br/>If you ever need to return to this page, you can do so through the browser's extension settings.<br/>If you enjoy using CookiesOK, please consider making a donation."
 	},
 	"footer_donation_text":{
 		"message": "CookiesOK requires constant updating to make and keep it working for as many sites as possible. If you're using CookiesOK, please consider making a donation, helping us to further improve CookiesOK."
