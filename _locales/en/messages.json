@@ -14,8 +14,11 @@
 	"options_option_reporter_email_description":{
 		"message": "Will be submitted with any websites you report if entered. You'll receive a confirmation e-mail after your report has been handled."
 	},
-	"options_message_initial_welcome":{
-		"message": "<h2>Welcome!</h2>Thank you for installing CookiesOK. This is the options page, you may configure some of the behaviour of CookiesOK here. Please review and adjust the options below to your liking.<br/>If you ever need to return to this page, you can do so through the browser's extension settings.<br/>If you enjoy using CookiesOK, please consider making a donation."
+	"options_message_initial_welcome_header":{
+		"message": "Welcome!"
+	},
+	"options_message_initial_welcome_description":{
+		"message": "Thank you for installing CookiesOK. This is the options page, you may configure some of the behaviour of CookiesOK here. Please review and adjust the options below to your liking.\nIf you ever need to return to this page, you can do so through the browser's extension settings.\nIf you enjoy using CookiesOK, please consider making a donation."
 	},
 	"footer_donation_text":{
 		"message": "CookiesOK requires constant updating to make and keep it working for as many sites as possible. If you're using CookiesOK, please consider making a donation, helping us to further improve CookiesOK."
@@ -41,7 +44,13 @@
 	"report_field_additional_notes_description":{
 		"message": "If enabled CookiesOK will add an option to your context menu (right	click menu) which allows you to report websites that are not (yet) handled by CookiesOK."
 	},
-	"report_message_thank_you":{
-		"message": "<h2>Thanks!</h2>The URL has been reported and we'll check it out shortly.<br/><a href='#' id='anotherUrl'>Report another url</a>"
+	"report_message_thank_you_header":{
+		"message": "Thanks!"
+	},
+	"report_message_thank_you_description":{
+		"message": "The URL has been reported and we'll check it out shortly."
+	},
+	"report_message_thank_you_anoter_url":{
+		"message": "Report another url"
 	}
 }
