@@ -45,7 +45,7 @@
 		"message": "Additional notes"
 	},
 	"report_field_additional_notes_description":{
-		"message": "If enabled CookiesOK will add an option to your context menu (right	click menu) which allows you to report websites that are not (yet) handled by CookiesOK."
+		"message": "Anything we should know when we check out your report"
 	},
 	"report_message_thank_you_header":{
 		"message": "Thanks!"
