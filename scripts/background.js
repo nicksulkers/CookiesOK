@@ -38,7 +38,7 @@ chrome.storage.sync.get('options', function (values) {
 	if (options['contextmenu'] !== false) { //undefined OR true
 		try {
 			chrome.contextMenus.create({
-				id: "CookiesOK_report", title: "Report to CookiesOK", contexts: ["page"], onclick: function (info) {
+				id: "CookiesOK_report", title: chrome.i18n.getMessage("context_menu_report_text"), contexts: ["page"], onclick: function (info) {
 					chrome.tabs.create({'url': chrome.extension.getURL('pages/report/index.html?url=' + escape(info.pageUrl))});
 				}
 			});

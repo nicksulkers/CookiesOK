@@ -1,4 +1,7 @@
 {
+	"context_menu_report_text":{
+		"message": "Report to CookiesOK"
+	},
 	"options_document_title":{
 		"message": "CookiesOK Options"
 	},
