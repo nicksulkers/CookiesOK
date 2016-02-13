@@ -55,5 +55,8 @@
 	},
 	"report_message_thank_you_anoter_url":{
 		"message": "Report another url"
+	},
+	"report_submit_button":{
+		"message": "Submit report"
 	}
 }

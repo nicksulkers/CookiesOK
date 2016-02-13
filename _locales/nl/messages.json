@@ -55,5 +55,8 @@
 	},
 	"report_message_thank_you_anoter_url":{
 		"message": "Rapporteer nog een website"
+	},
+	"report_submit_button":{
+		"message": "Melding versturen"
 	}
 }
