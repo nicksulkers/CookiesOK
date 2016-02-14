@@ -66,7 +66,7 @@ chrome.runtime.onInstalled.addListener(function (details) {
 	if (details.reason == "install") {
 		chrome.tabs.create({'url': chrome.extension.getURL('pages/options/index.html?initial')});
 	} else if (details.reason == "update") {
-		chrome.tabs.create({'url': chrome.extension.getURL('pages/options/index.html?upgradeFrom=' + escape(details.previousVersion))});
+		//chrome.tabs.create({'url': chrome.extension.getURL('pages/options/index.html?upgradeFrom=' + escape(details.previousVersion))});
 	}
 });
 
