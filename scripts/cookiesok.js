@@ -1,4 +1,4 @@
-(function () {
+(function(){
 	var version = chrome.runtime.getManifest().version;
 
 	var retryTimeout = 500;
@@ -8,8 +8,8 @@
 		//console.log(obj);
 	}
 
-	function performOrder(orders, attempt) {
-		if (!attempt)
+	function performOrder(orders, attempt){
+		if(!attempt)
 			attempt = 1;
 
 		log('performOrder, attempt nr.: ' + attempt + '');
@@ -18,26 +18,25 @@
 		log('Searching target DOM: document.querySelector("' + frames[0] + '")');
 		var target = document.querySelector(frames[0]);
 
-		for (var i = 1; target && i < frames.length; ++i) {
-			try {
+		for(var i = 1; target && i < frames.length; ++i){
+			try{
 				log('.querySelector("' + frames[i] + '")');
 				target = target.contentWindow.document.querySelector(frames[i])
-			} catch (ex) {
+			}catch(ex){
 				target = null;
 			}
 		}
 
-		if (!target) {
-			if (attempt < attemptsLimit)
+		if(!target){
+			if(attempt < attemptsLimit)
 				setTimeout(performOrder, retryTimeout, orders, attempt + 1);
 			return;
 		}
 
 		log('target found! Performing ' + orders.action);
-		switch (orders.action) {
+		switch(orders.action){
 			case 'hide':
 				target.style.display = 'none';
-				target.style.visibility = 'hidden';
 				break;
 			case 'remove':
 				target.parentNode.removeChild(target);
@@ -54,27 +53,23 @@
 	script.innerHTML = 'if(window.CookiesOK) window.CookiesOK("' + version + '");';
 	var head = document.getElementsByTagName("head")[0];
 	head.appendChild(script);
-	setTimeout(function () {
+	setTimeout(function(){
 		head.removeChild(script);
 	}, 15);
 
 	//retrieve database from background
 	log('Looking up ' + location.hostname + ' in database');
-	chrome.runtime.sendMessage({"action": "getDomainOrders", "hostname": location.hostname}, function (result) {
-		log(result);
-		if (!result.success)
-			return;
+	if(orders){
+		log("Orders found...")
+		if(orders.action)
+			orders = [orders];
 
-		var orders = result.orders;
-		if (orders) {
-			log("Orders found...")
-			if (orders.action)
-				orders = [orders];
+		for(var i in orders)
+			performOrder(orders[i]);
+	}else{
+		log("No orders found...")
+	}
 
-			for (var i in orders)
-				performOrder(orders[i]);
-		} else {
-			log("No orders found...")
-		}
-	});
+	for(var o in hideStyles)
+		hideStyles[o].parentNode.removeChild(hideStyles[o]);
 })();
