@@ -1,12 +1,12 @@
 var options = {};
 var database = {};
 
-function downloadDatabase() {
+function downloadDatabase(){
 	var xhttp = new XMLHttpRequest();
-	xhttp.onreadystatechange = function () {
-		if (xhttp.readyState == 4 && xhttp.status == 200) {
+	xhttp.onreadystatechange = function(){
+		if(xhttp.readyState == 4 && xhttp.status == 200){
 			var result = JSON.parse(xhttp.responseText);
-			if(result.success) {
+			if(result.success){
 				database.websites = result.data;
 				database.updated = new Date();
 			}
@@ -16,7 +16,7 @@ function downloadDatabase() {
 	xhttp.send();
 }
 
-function isTooOld(date) {
+function isTooOld(date){
 	date = new Date(date);
 	var now = new Date();
 	var timePassed = now - date;
@@ -24,37 +24,40 @@ function isTooOld(date) {
 	return timePassed > msInDay;
 }
 
-chrome.storage.sync.get('database', function (data) {
-	if (!data.database || isTooOld(data.database.updated))
+chrome.storage.sync.get('database', function(data){
+	if(!data.database || isTooOld(data.database.updated))
 		downloadDatabase();
 	else
 		database = data.database;
 });
 
 
-chrome.storage.sync.get('options', function (values) {
-	if (values.options) options = values.options;
+chrome.storage.sync.get('options', function(values){
+	if(values.options) options = values.options;
 
-	if (options['contextmenu'] !== false) { //undefined OR true
-		try {
+	if(options['contextmenu'] !== false){ //undefined OR true
+		try{
 			chrome.contextMenus.create({
-				id: "CookiesOK_report", title: chrome.i18n.getMessage("context_menu_report_text"), contexts: ["page"], onclick: function (info) {
+				id: "CookiesOK_report",
+				title: chrome.i18n.getMessage("context_menu_report_text"),
+				contexts: ["page"],
+				onclick: function(info){
 					chrome.tabs.create({'url': chrome.extension.getURL('pages/report/index.html?url=' + escape(info.pageUrl))});
 				}
 			});
-		} catch (ex) {
+		}catch(ex){
 		}
-	} else {
-		try {
-			chrome.contextMenus.remove("CookiesOK_report", function () {
+	}else{
+		try{
+			chrome.contextMenus.remove("CookiesOK_report", function(){
 			});
-		} catch (ex) {
+		}catch(ex){
 		}
 	}
 });
 
 chrome.webRequest.onBeforeSendHeaders.addListener(
-	function (details) {
+	function(details){
 		details.requestHeaders.push({name: "X-CookiesOK", value: "I explicitly accept all cookies"})
 		return {requestHeaders: details.requestHeaders};
 	},
@@ -62,23 +65,23 @@ chrome.webRequest.onBeforeSendHeaders.addListener(
 	["blocking", "requestHeaders"]
 );
 
-chrome.runtime.onInstalled.addListener(function (details) {
-	if (details.reason == "install") {
+chrome.runtime.onInstalled.addListener(function(details){
+	if(details.reason == "install"){
 		chrome.tabs.create({'url': chrome.extension.getURL('pages/options/index.html?initial')});
-	} else if (details.reason == "update") {
+	}else if(details.reason == "update"){
 		//chrome.tabs.create({'url': chrome.extension.getURL('pages/options/index.html?upgradeFrom=' + escape(details.previousVersion))});
 	}
 });
 
-chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
+chrome.runtime.onMessage.addListener(function(request, sender, sendResponse){
 	switch(request.action){
 		case "getDomainOrders":
 			var hostname = request.hostname;
-			if (hostname.indexOf('www.') === 0)
+			if(hostname.indexOf('www.') === 0)
 				hostname = hostname.substr(4);
 
 			var orders = database.websites[hostname];
-			if (!orders && hostname.match('.')) {
+			if(!orders && hostname.match('.')){
 				var tmpHostname = hostname.split(".");
 				tmpHostname[0] = '*';
 				tmpHostname = tmpHostname.join('.');

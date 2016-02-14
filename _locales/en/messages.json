@@ -1,62 +1,62 @@
 {
-	"context_menu_report_text":{
+	"context_menu_report_text": {
 		"message": "Report to CookiesOK"
 	},
-	"options_document_title":{
+	"options_document_title": {
 		"message": "CookiesOK Options"
 	},
-	"options_option_enable_report_context_menu_item":{
+	"options_option_enable_report_context_menu_item": {
 		"message": "Enable report context menu item"
 	},
-	"options_option_enable_report_context_menu_item_description":{
+	"options_option_enable_report_context_menu_item_description": {
 		"message": "If enabled CookiesOK will add an option to your context menu (right	click menu) which allows you to report websites that are not (yet) handled by CookiesOK."
 	},
-	"options_option_reporter_email":{
+	"options_option_reporter_email": {
 		"message": "Email address"
 	},
-	"options_option_reporter_email_description":{
+	"options_option_reporter_email_description": {
 		"message": "Will be submitted with any websites you report if entered. You'll receive a confirmation e-mail after your report has been handled."
 	},
-	"options_message_initial_welcome_header":{
+	"options_message_initial_welcome_header": {
 		"message": "Welcome!"
 	},
-	"options_message_initial_welcome_description":{
+	"options_message_initial_welcome_description": {
 		"message": "Thank you for installing CookiesOK. This is the options page, you may configure some of the behaviour of CookiesOK here. Please review and adjust the options below to your liking.\nIf you ever need to return to this page, you can do so through the browser's extension settings.\nIf you enjoy using CookiesOK, please consider making a donation."
 	},
-	"footer_donation_text":{
+	"footer_donation_text": {
 		"message": "CookiesOK requires constant updating to make and keep it working for as many sites as possible. If you're using CookiesOK, please consider making a donation, helping us to further improve CookiesOK."
 	},
-	"report_document_title":{
+	"report_document_title": {
 		"message": "CookiesOK report a website"
 	},
-	"report_field_url":{
+	"report_field_url": {
 		"message": "URL to report"
 	},
-	"report_field_url_description":{
+	"report_field_url_description": {
 		"message": "This is the address to the website where CookiesOK doesn't work (properly).."
 	},
-	"report_field_email":{
+	"report_field_email": {
 		"message": "Email address"
 	},
-	"report_field_email_description":{
+	"report_field_email_description": {
 		"message": "Not required. If entered we will send you a confirmation email when your report has been handled."
 	},
-	"report_field_additional_notes":{
+	"report_field_additional_notes": {
 		"message": "Additional notes"
 	},
-	"report_field_additional_notes_description":{
+	"report_field_additional_notes_description": {
 		"message": "Anything we should know when we check out your report"
 	},
-	"report_message_thank_you_header":{
+	"report_message_thank_you_header": {
 		"message": "Thanks!"
 	},
-	"report_message_thank_you_description":{
+	"report_message_thank_you_description": {
 		"message": "The URL has been reported and we'll check it out shortly."
 	},
-	"report_message_thank_you_anoter_url":{
+	"report_message_thank_you_anoter_url": {
 		"message": "Report another url"
 	},
-	"report_submit_button":{
+	"report_submit_button": {
 		"message": "Submit report"
 	}
 }
