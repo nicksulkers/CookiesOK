@@ -4,7 +4,7 @@
 	var retryTimeout = 500;
 	var attemptsLimit = 10;
 
-	function log(obj) {
+	function log(obj){
 		//console.log(obj);
 	}
 

@@ -1,77 +1,81 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<meta charset='utf-8'/>
-	<title data-translation="report_document_title"></title>
-	<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300|Alegreya:900|Alegreya+SC:700"
-	      rel="stylesheet"
-	      type="text/css">
-	<link rel="stylesheet" type="text/css" href="../stylesheet.css">
-</head>
-<body>
-<div class="panel heading">
-	<img src="../../images/icon128.png" alt="OK" class="logo"/>
-	<h1>Cookies<span>OK</span></h1>
+	<head>
+		<meta charset='utf-8'/>
+		<title data-translation="report_document_title"></title>
+		<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300|Alegreya:900|Alegreya+SC:700"
+		      rel="stylesheet"
+		      type="text/css">
+		<link rel="stylesheet" type="text/css" href="../stylesheet.css">
+	</head>
+	<body>
+		<div class="panel heading">
+			<img src="../../images/icon128.png" alt="OK" class="logo"/>
+			<h1>Cookies<span>OK</span></h1>
 
-	<h2>I explicitly accept all cookies!</h2>
-</div>
-<div class="panel options-panel" id="thankYou" style="display:none;">
-	<h2 data-translation="report_message_thank_you_header"></h2>
-	<div data-translation="report_message_thank_you_description"></div>
-	<div><a href='#' id='anotherUrl' data-translation="report_message_thank_you_another_url"></a></div>
-</div>
-<div class="panel options-panel" id="formPanel">
-	<table>
-		<tr id="options-url" class="option">
-			<th data-translation="report_field_url"></th>
-			<td>
-				<input type="url" style="width:100%;" id="url"/>
+			<h2>I explicitly accept all cookies!</h2>
+		</div>
+		<div class="panel options-panel" id="thankYou" style="display:none;">
+			<h2 data-translation="report_message_thank_you_header"></h2>
+			<div data-translation="report_message_thank_you_description"></div>
+			<div><a href='#' id='anotherUrl' data-translation="report_message_thank_you_another_url"></a></div>
+		</div>
+		<div class="panel options-panel" id="formPanel">
+			<table>
+				<tr id="options-url" class="option">
+					<th data-translation="report_field_url"></th>
+					<td>
+						<input type="url" style="width:100%;" id="url"/>
 
-				<div class="options-description" data-translation="report_field_url_description"></div>
-			</td>
-		</tr>
-		<tr id="options-email" class="option">
-			<th data-translation="report_field_email"></th>
-			<td>
-				<input type="email" style="width:100%;" id="email"/>
+						<div class="options-description" data-translation="report_field_url_description"></div>
+					</td>
+				</tr>
+				<tr id="options-email" class="option">
+					<th data-translation="report_field_email"></th>
+					<td>
+						<input type="email" style="width:100%;" id="email"/>
 
-				<div class="options-description" data-translation="report_field_email_description"></div>
-			</td>
-		</tr>
-		<tr id="options-notes" class="option">
-			<th data-translation="report_field_additional_notes"></th>
-			<td>
-				<textarea style="width:100%;" rows="3" id="additionalNotes"></textarea>
+						<div class="options-description" data-translation="report_field_email_description"></div>
+					</td>
+				</tr>
+				<tr id="options-notes" class="option">
+					<th data-translation="report_field_additional_notes"></th>
+					<td>
+						<textarea style="width:100%;" rows="3" id="additionalNotes"></textarea>
 
-				<div class="options-description" data-translation="report_field_additional_notes_description"></div>
-			</td>
-		</tr>
-	</table>
+						<div class="options-description"
+						     data-translation="report_field_additional_notes_description"></div>
+					</td>
+				</tr>
+			</table>
 
-	<div id="footer">
-		<button id="submitReport" data-translation="report_submit_button"></button>
-		<span id="status"></span>
-	</div>
+			<div id="footer">
+				<button id="submitReport" data-translation="report_submit_button"></button>
+				<span id="status"></span>
+			</div>
 
-</div>
-<div class="panel footer-panel">
-	<div data-translation="footer_donation_text"></div>
-	<br/><br/>
-	<a href="https://flattr.com/thing/1144735/CookiesOK" target="_blank">
-		<img src="https://api.flattr.com/button/flattr-badge-large.png" alt="Flattr this" title="Flattr this" border="0"/></a>
-	&nbsp;&nbsp;
-	<form style="display:inline-block;" action="https://www.paypal.com/cgi-bin/webscr" method="post">
-		<input type="hidden" name="cmd" value="_s-xclick">
-		<input type="hidden" name="encrypted" value="-----BEGIN PKCS7-----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-----END PKCS7-----
+		</div>
+		<div class="panel footer-panel">
+			<div data-translation="footer_donation_text"></div>
+			<br/><br/>
+			<a href="https://flattr.com/thing/1144735/CookiesOK" target="_blank">
+				<img src="https://api.flattr.com/button/flattr-badge-large.png" alt="Flattr this" title="Flattr this"
+				     border="0"/></a>
+			&nbsp;&nbsp;
+			<form style="display:inline-block;" action="https://www.paypal.com/cgi-bin/webscr" method="post">
+				<input type="hidden" name="cmd" value="_s-xclick">
+				<input type="hidden" name="encrypted" value="-----BEGIN PKCS7-----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-----END PKCS7-----
 ">
-		<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" style="border:none;"
-		       name="submit" alt="PayPal - The safer, easier way to pay online!">
-		<img alt="" style="border:none;" src="https://www.paypalobjects.com/nl_NL/i/scr/pixel.gif" width="1" height="1">
-	</form>
-</div>
+				<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif"
+				       style="border:none;"
+				       name="submit" alt="PayPal - The safer, easier way to pay online!">
+				<img alt="" style="border:none;" src="https://www.paypalobjects.com/nl_NL/i/scr/pixel.gif" width="1"
+				     height="1">
+			</form>
+		</div>
 
-<script type="text/javascript" src="script.js"></script>
-<script type="text/javascript" src="../translator.js"></script>
+		<script type="text/javascript" src="script.js"></script>
+		<script type="text/javascript" src="../translator.js"></script>
 
-</body>
+	</body>
 </html>
