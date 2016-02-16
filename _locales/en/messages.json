@@ -9,10 +9,10 @@
 		"message": "Stop CookiesOK"
 	},
 	"browser_action_button_settings": {
-		"message": "Instellingen"
+		"message": "Settings"
 	},
 	"browser_action_button_report": {
-		"message": "Website rapporteren"
+		"message": "Report website"
 	},
 	"options_document_title": {
 		"message": "CookiesOK Options"
