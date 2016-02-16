@@ -37,7 +37,6 @@
 		switch(orders.action){
 			case 'hide':
 				target.style.display = 'none';
-				target.style.visibility = 'hidden';
 				break;
 			case 'remove':
 				target.parentNode.removeChild(target);
@@ -49,6 +48,7 @@
 	}
 
 	//Always Attempt to execute the CookiesOK method, remove from source after execution
+	//this allows websites to recognize CookiesOK and assume consent
 	log('Attempting execution of JS function CookiesOK("' + version + '")');
 	var script = document.createElement('script');
 	script.innerHTML = 'if(window.CookiesOK) window.CookiesOK("' + version + '");';
@@ -59,13 +59,11 @@
 	}, 15);
 
 	//retrieve database from background
-	log('Looking up ' + location.hostname + ' in database');
-	chrome.runtime.sendMessage({"action": "getDomainOrders", "hostname": location.hostname}, function(result){
-		log(result);
-		if(!result.success)
-			return;
+	(function performOrders(){
+		if(!getDomainOrdersComplete) //this should never happen.. but in theory, it could
+			return setTimeout(performOrders, 15);
 
-		var orders = result.orders;
+		log('Looking up ' + location.hostname + ' in database');
 		if(orders){
 			log("Orders found...")
 			if(orders.action)
@@ -76,5 +74,8 @@
 		}else{
 			log("No orders found...")
 		}
-	});
+
+		for(var o in hideStyles)
+			hideStyles[o].parentNode.removeChild(hideStyles[o]);
+	})();
 })();
