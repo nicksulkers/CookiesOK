@@ -1,0 +1,37 @@
+body {
+	width: 150px;
+}
+
+header {
+	text-align: center;
+	font-size: 22px;
+	font-style: normal;
+	font-weight: normal;
+	font-family: Alegreya;
+}
+
+header img {
+	vertical-align: middle;
+}
+
+header span {
+	vertical-align: middle;
+}
+
+header span:last-child {
+	color: rgb(0, 201, 0);
+}
+
+#menu button {
+	width: 100%;
+	display: block;
+	border: none;
+	background: none;
+	cursor: pointer;
+	padding: 7px;
+	text-align: left;
+}
+
+#menu button:hover {
+	background-color: #CCC;
+}

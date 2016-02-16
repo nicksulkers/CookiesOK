@@ -1,5 +1,18 @@
+var paused = false;
+
 var options = {};
 var database = {};
+
+function setPaused(value){
+	paused = value;
+	var g = paused ? 'grey' : '';
+	chrome.browserAction.setIcon({
+		path: {
+			19: "images/icon19" + g + ".png",
+			38: "images/icon38" + g + ".png"
+		}
+	});
+}
 
 function downloadDatabase(callback){
 	var xhttp = new XMLHttpRequest();
@@ -82,6 +95,10 @@ chrome.runtime.onInstalled.addListener(function(details){
 });
 
 chrome.runtime.onMessage.addListener(function(request, sender, sendResponse){
+	if(paused){
+		sendResponse({success: false});
+		return;
+	}
 	switch(request.action){
 		case "getDomainOrders":
 			var hostname = request.hostname;
