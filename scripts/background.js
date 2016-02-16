@@ -1,14 +1,15 @@
 var options = {};
 var database = {};
 
-function downloadDatabase(){
+function downloadDatabase(callback){
 	var xhttp = new XMLHttpRequest();
 	xhttp.onreadystatechange = function(){
-		if(xhttp.readyState == 4 && xhttp.status == 200){
-			var result = JSON.parse(xhttp.responseText);
-			if(result.success){
-				database.websites = result.data;
-				database.updated = new Date();
+		if(xhttp.readyState == 4){
+			if(xhttp.status == 200){
+				var result = JSON.parse(xhttp.responseText);
+				callback(result.success, result.data);
+			}else{
+				callback(false);
 			}
 		}
 	};
@@ -20,13 +21,18 @@ function isTooOld(date){
 	date = new Date(date);
 	var now = new Date();
 	var timePassed = now - date;
-	var msInDay = 24 * 3600 * 1000;
+	var msInDay = 24 * 3600 * 1000; //24 hours
 	return timePassed > msInDay;
 }
 
 chrome.storage.sync.get('database', function(data){
 	if(!data.database || isTooOld(data.database.updated))
-		downloadDatabase();
+		downloadDatabase(function(success, data){
+			if(success){
+				database.websites = data;
+				database.updated = new Date();
+			}else database = data.database; //should the server ever face some downtime
+		});
 	else
 		database = data.database;
 });
@@ -56,6 +62,8 @@ chrome.storage.sync.get('options', function(values){
 	}
 });
 
+//Send along a X-CookiesOK HTTP header
+//this allows websites to recognize CookiesOK and assume consent
 chrome.webRequest.onBeforeSendHeaders.addListener(
 	function(details){
 		details.requestHeaders.push({name: "X-CookiesOK", value: "I explicitly accept all cookies"})
