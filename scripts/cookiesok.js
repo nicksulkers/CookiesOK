@@ -48,6 +48,7 @@
 	}
 
 	//Always Attempt to execute the CookiesOK method, remove from source after execution
+	//this allows websites to recognize CookiesOK and assume consent
 	log('Attempting execution of JS function CookiesOK("' + version + '")');
 	var script = document.createElement('script');
 	script.innerHTML = 'if(window.CookiesOK) window.CookiesOK("' + version + '");';
@@ -58,18 +59,23 @@
 	}, 15);
 
 	//retrieve database from background
-	log('Looking up ' + location.hostname + ' in database');
-	if(orders){
-		log("Orders found...")
-		if(orders.action)
-			orders = [orders];
+	(function performOrders(){
+		if(!getDomainOrdersComplete) //this should never happen.. but in theory, it could
+			return setTimeout(performOrders, 15);
 
-		for(var i in orders)
-			performOrder(orders[i]);
-	}else{
-		log("No orders found...")
-	}
+		log('Looking up ' + location.hostname + ' in database');
+		if(orders){
+			log("Orders found...")
+			if(orders.action)
+				orders = [orders];
 
-	for(var o in hideStyles)
-		hideStyles[o].parentNode.removeChild(hideStyles[o]);
+			for(var i in orders)
+				performOrder(orders[i]);
+		}else{
+			log("No orders found...")
+		}
+
+		for(var o in hideStyles)
+			hideStyles[o].parentNode.removeChild(hideStyles[o]);
+	})();
 })();
