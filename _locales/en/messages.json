@@ -2,6 +2,18 @@
 	"context_menu_report_text": {
 		"message": "Report to CookiesOK"
 	},
+	"browser_action_button_resume": {
+		"message": "Continue CookiesOK"
+	},
+	"browser_action_button_pause": {
+		"message": "Stop CookiesOK"
+	},
+	"browser_action_button_settings": {
+		"message": "Instellingen"
+	},
+	"browser_action_button_report": {
+		"message": "Website rapporteren"
+	},
 	"options_document_title": {
 		"message": "CookiesOK Options"
 	},
