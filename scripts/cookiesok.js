@@ -31,8 +31,24 @@
 			case 'remove':
 				target.parentNode.removeChild(target);
 				break;
-			default:
+			case 'click':
+			case 'submit':
+			case 'focus':
+			case 'blur':
+			case 'select':
 				target[orders.action]();
+				break;
+			case 'removeClasses':
+				var classes = target.className.trim().split(/\s+/);
+				var index;
+				for(var a in orders.args)
+					if(-1 !== (index = classes.indexOf(orders.args[a])))
+						classes.splice(index, 1);
+				target.className = classes.join(" ");
+				break;
+			case 'addClasses':
+				for(var b in orders.args)
+					target.className += " " + orders.args[b];
 				break;
 		}
 	}
