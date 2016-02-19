@@ -58,9 +58,12 @@
 
 			for(var i in orders)
 				performOrder(orders[i]);
-		}
 
-		for(var o in hideStyles)
-			hideStyles[o].parentNode.removeChild(hideStyles[o]);
+			for(var o in hideStyles)
+				hideStyles[o].parentNode.removeChild(hideStyles[o]);
+		}else{
+			var a = document.getElementsByClassName('CookiesOK');
+			a.length && a[0].click();
+		}
 	})();
 })();
