@@ -1,6 +1,4 @@
 (function(){
-	var version = chrome.runtime.getManifest().version;
-
 	var retryTimeout = 500;
 	var attemptsLimit = 10;
 
@@ -53,19 +51,13 @@
 		}
 	}
 
-	//Always Attempt to execute the CookiesOK method, remove from source after execution
-	//this allows websites to recognize CookiesOK and assume consent
 	var script = document.createElement('script');
-	script.innerHTML = 'if(window.CookiesOK) window.CookiesOK("' + version + '");';
-	var head = document.getElementsByTagName("head")[0];
-	head.appendChild(script);
-	setTimeout(function(){
-		head.removeChild(script);
-	}, 15);
+	script.innerHTML = 'if(window.CookiesOK) window.CookiesOK("' + chrome.runtime.getManifest().version + '");';
+	document.documentElement.appendChild(script);
+	document.documentElement.removeChild(script);
 
-	//retrieve database from background
 	(function performOrders(){
-		if(!getDomainOrdersComplete) //this should never happen.. but in theory, it could
+		if(!getDomainOrdersComplete)
 			return setTimeout(performOrders, 15);
 
 		if(orders){

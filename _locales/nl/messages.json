@@ -1,74 +1,98 @@
 {
 	"context_menu_report_text": {
-		"message": "Rapporteer naar CookiesOK"
+		"message": "Rapporteer naar CookiesOK",
+		"description": "Rapporteer naar CookiesOK"
 	},
 	"browser_action_button_resume": {
-		"message": "CookiesOK hervatten"
+		"message": "CookiesOK hervatten",
+		"description": "CookiesOK hervatten"
 	},
 	"browser_action_button_pause": {
-		"message": "CookiesOK pauzeren"
+		"message": "CookiesOK pauzeren",
+		"description": "CookiesOK pauzeren"
 	},
 	"browser_action_button_settings": {
-		"message": "Instellingen"
+		"message": "Instellingen",
+		"description": "Instellingen"
 	},
 	"browser_action_button_report": {
-		"message": "Website rapporteren"
+		"message": "Website rapporteren",
+		"description": "Website rapporteren"
 	},
 	"options_document_title": {
-		"message": "CookiesOK Opties"
+		"message": "CookiesOK Opties",
+		"description": "CookiesOK Opties"
 	},
 	"options_option_enable_report_context_menu_item": {
-		"message": "Weergeef rapporteer knop in context menu"
+		"message": "Weergeef rapporteer knop in context menu",
+		"description": "Weergeef rapporteer knop in context menu"
 	},
 	"options_option_enable_report_context_menu_item_description": {
-		"message": "Mits deze optie is ingeschakeld kun je websites rapporteren via een optie in het context menu (rechter muisklik menu) als deze (nog) niet ondersteund is."
+		"message": "Mits deze optie is ingeschakeld kun je websites rapporteren via een optie in het context menu (rechter muisklik menu) als deze (nog) niet ondersteund is.",
+		"description": "Mits deze optie is ingeschakeld kun je websites rapporteren via een optie in het context menu (rechter muisklik menu) als deze (nog) niet ondersteund is."
 	},
 	"options_option_reporter_email": {
-		"message": "E-mailadres"
+		"message": "E-mailadres",
+		"description": "E-mailadres"
 	},
 	"options_option_reporter_email_description": {
-		"message": "Optioneel. Deze wordt meegestuurd wanneer u een website rapporteert. Mogelijk ontvangt u een bevestiging wanneer uw melding is verwerkt of contacteren wij u mochten er vragen of onduidelijkheden zijn over uw melding"
+		"message": "Optioneel. Deze wordt meegestuurd wanneer u een website rapporteert. Mogelijk ontvangt u een bevestiging wanneer uw melding is verwerkt of contacteren wij u mochten er vragen of onduidelijkheden zijn over uw melding",
+		"description": "Optioneel. Deze wordt meegestuurd wanneer u een website rapporteert. Mogelijk ontvangt u een bevestiging wanneer uw melding is verwerkt of contacteren wij u mochten er vragen of onduidelijkheden zijn over uw melding"
 	},
 	"options_message_initial_welcome_header": {
-		"message": "Welkom!"
+		"message": "Welkom!",
+		"description": "Welkom!"
 	},
 	"options_message_initial_welcome_description": {
-		"message": "Dankuwel voor het installeren van CookiesOK. Dit is de opties pagina. U kunt enkele aspecten van CookiesOK hier naar wens configureren.\nMocht u ooit nog naar deze pagina willen terugkeren dan kan dit via de extensies pagina van uw webbrowser.\nAls u CookiesOK handig vindt, overweegt u alstublieft een donatie te doen."
+		"message": "Dankuwel voor het installeren van CookiesOK. Dit is de opties pagina. U kunt enkele aspecten van CookiesOK hier naar wens configureren.\nMocht u ooit nog naar deze pagina willen terugkeren dan kan dit via de extensies pagina van uw webbrowser.\nAls u CookiesOK handig vindt, overweegt u alstublieft een donatie te doen.",
+		"description": "Dankuwel voor het installeren van CookiesOK. Dit is de opties pagina. U kunt enkele aspecten van CookiesOK hier naar wens configureren.\nMocht u ooit nog naar deze pagina willen terugkeren dan kan dit via de extensies pagina van uw webbrowser.\nAls u CookiesOK handig vindt, overweegt u alstublieft een donatie te doen."
 	},
 	"footer_donation_text": {
-		"message": "CookiesOK up-to-date houden is veel werk. Er komen voortdurend nieuwe websites bij en bestaande websites veranderen voortdurend. Als u CookiesOK handig vindt, overweegt u alstublieft een donatie te doen om ons hierbij te ondersteunen."
+		"message": "CookiesOK up-to-date houden is veel werk. Er komen voortdurend nieuwe websites bij en bestaande websites veranderen voortdurend. Als u CookiesOK handig vindt, overweegt u alstublieft een donatie te doen om ons hierbij te ondersteunen.",
+		"description": "CookiesOK up-to-date houden is veel werk. Er komen voortdurend nieuwe websites bij en bestaande websites veranderen voortdurend. Als u CookiesOK handig vindt, overweegt u alstublieft een donatie te doen om ons hierbij te ondersteunen."
 	},
 	"report_document_title": {
-		"message": "CookiesOK Rapporteer een website"
+		"message": "CookiesOK Rapporteer een website",
+		"description": "CookiesOK Rapporteer een website"
 	},
 	"report_field_url": {
-		"message": "URL naar website"
+		"message": "URL naar website",
+		"description": "URL naar website"
 	},
 	"report_field_url_description": {
-		"message": "Het adres (link) naar de website"
+		"message": "Het adres (link) naar de website",
+		"description": "Het adres (link) naar de website"
 	},
 	"report_field_email": {
-		"message": "E-mailadres"
+		"message": "E-mailadres",
+		"description": "E-mailadres"
 	},
 	"report_field_email_description": {
-		"message": "Optioneel. Deze wordt meegestuurd wanneer u een website rapporteert. Mogelijk ontvangt u een bevestiging wanneer uw melding is verwerkt of contacteren wij u mochten er vragen of onduidelijkheden zijn over uw melding"
+		"message": "Optioneel. Deze wordt meegestuurd wanneer u een website rapporteert. Mogelijk ontvangt u een bevestiging wanneer uw melding is verwerkt of contacteren wij u mochten er vragen of onduidelijkheden zijn over uw melding",
+		"description": "Optioneel. Deze wordt meegestuurd wanneer u een website rapporteert. Mogelijk ontvangt u een bevestiging wanneer uw melding is verwerkt of contacteren wij u mochten er vragen of onduidelijkheden zijn over uw melding"
 	},
 	"report_field_additional_notes": {
-		"message": "Eventuele toelichting"
+		"message": "Eventuele toelichting",
+		"description": "Eventuele toelichting"
 	},
 	"report_field_additional_notes_description": {
-		"message": "Eventuele bijzonderheden of stappen die u verricht heeft voordat de melding opkwam."
+		"message": "Eventuele bijzonderheden of stappen die u verricht heeft voordat de melding opkwam.",
+		"description": "Eventuele bijzonderheden of stappen die u verricht heeft voordat de melding opkwam."
 	},
 	"report_message_thank_you_header": {
-		"message": "Dankuwel!"
+		"message": "Dankuwel!",
+		"description": "Dankuwel!"
 	},
 	"report_message_thank_you_description": {
-		"message": "Uw melding is verstuurd. Wij nemen deze zsm. in behandeling!"
+		"message": "Uw melding is verstuurd. Wij nemen deze zsm. in behandeling!",
+		"description": "Uw melding is verstuurd. Wij nemen deze zsm. in behandeling!"
 	},
 	"report_message_thank_you_anoter_url": {
-		"message": "Rapporteer nog een website"
+		"message": "Rapporteer nog een website",
+		"description": "Rapporteer nog een website"
 	},
 	"report_submit_button": {
-		"message": "Melding versturen"
+		"message": "Melding versturen",
+		"description": "Melding versturen"
 	}
 }

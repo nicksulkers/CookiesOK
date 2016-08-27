@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Package 
+	xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10"
+	xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10"
+	xmlns:uap3="http://schemas.microsoft.com/appx/manifest/uap/windows10/3"
+	IgnorableNamespaces="uap3">
+	<Identity 
+		Name="CookiesOK" 
+		Publisher="CN=Nick-Sulkers" 
+		Version="5.2" /> <!-- UPDATE IDENTITY -->
+
+	<Properties> 
+		<DisplayName>CookiesOK</DisplayName> 
+		<PublisherDisplayName>Nick Sulkers</PublisherDisplayName> <!-- UPDATE PLUBLISHER DISPLAY NAME -->
+		<Logo>Assets\StoreLogo.png</Logo> 
+	</Properties> 
+
+	<Dependencies> 
+		<TargetDeviceFamily Name="Windows.Desktop" MinVersion="10.0.14287.0" MaxVersionTested="12.0.0.0" /> 
+	</Dependencies> 
+
+	<Resources>
+		<Resource Language="en" />
+	</Resources> 
+
+	<Applications> 
+		<Application Id="App">
+			<uap:VisualElements
+				AppListEntry="none"
+				DisplayName="CookiesOK"
+				Square150x150Logo="Assets\Square150x150Logo.png"
+        		Square44x44Logo="Assets\Square44x44Logo.png"
+				Description="CookiesOK aims to automatically accept cookies on websites that are affected by the EU cookie laws."
+				BackgroundColor="transparent">
+			</uap:VisualElements>
+			<Extensions>
+				<uap3:Extension Category="windows.appExtension">
+					<uap3:AppExtension
+						Name="com.microsoft.edge.extension"
+						Id="EdgeExtension"
+						PublicFolder="Extension"
+						DisplayName="CookiesOK">
+						<uap3:Properties>
+							<Capabilities>
+								<Capability Name="websiteContent"/>
+								<Capability Name="storage"/>
+								<Capability Name="webRequest"/>
+								<Capability Name="tabs"/>
+							</Capabilities>
+						</uap3:Properties>
+					</uap3:AppExtension>
+				</uap3:Extension>
+			</Extensions>
+		</Application> 
+	</Applications>
+</Package>

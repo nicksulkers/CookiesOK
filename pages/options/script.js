@@ -1,6 +1,7 @@
 var defaultEnabledProperties = ['contextmenu'];
+var storageContainer = chrome.storage.sync || chrome.storage.local; //sync if possible, works for chrome and opera but is not (yet) supported in firefox
 
-chrome.storage.sync.get('options', function(values){
+storageContainer.get('options', function(values){
 	values = values.options;
 
 	if(!values){
@@ -38,11 +39,11 @@ function save(){
 		else
 			values[optionName] = input.value;
 	}
-	chrome.storage.sync.set({options: values}, function(){
+	storageContainer.set({options: values}, function(){
 		var date = new Date();
 		document.getElementById('status').innerHTML = 'Saved at ' + zero(date.getHours()) + ':' + zero(date.getMinutes()) + ':' + zero(date.getSeconds());
 	});
-	chrome.extension.getBackgroundPage().window.location.reload();
+	chrome.extension.getBackgroundPage().window.init();
 }
 
 for(var i = 0; i < options.length; ++i){

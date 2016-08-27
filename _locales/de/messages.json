@@ -1,74 +1,98 @@
 {
 	"context_menu_report_text": {
-		"message": "An CookiesOK melden"
+		"message": "An CookiesOK melden",
+		"description": "An CookiesOK melden"
 	},
 	"browser_action_button_resume": {
-		"message": "CookiesOK fortsetzen"
+		"message": "CookiesOK fortsetzen",
+		"description": "CookiesOK fortsetzen"
 	},
 	"browser_action_button_pause": {
-		"message": "CookiesOK stoppen"
+		"message": "CookiesOK stoppen",
+		"description": "CookiesOK stoppen"
 	},
 	"browser_action_button_settings": {
-		"message": "Einstellungen"
+		"message": "Einstellungen",
+		"description": "Einstellungen"
 	},
 	"browser_action_button_report": {
-		"message": "Webseite melden"
+		"message": "Webseite melden",
+		"description": "Webseite melden"
 	},
 	"options_document_title": {
-		"message": "CookiesOK-Optionen"
+		"message": "CookiesOK-Optionen",
+		"description": "CookiesOK-Optionen"
 	},
 	"options_option_enable_report_context_menu_item": {
-		"message": "Melden-Kontextmenüeintrag aktivieren"
+		"message": "Melden-Kontextmenüeintrag aktivieren",
+		"description": "Melden-Kontextmenüeintrag aktivieren"
 	},
 	"options_option_enable_report_context_menu_item_description": {
-		"message": "Mit dieser Option fügt CookiesOK einen Eintrag in das Kontextmenü (rechte Maustaste-Menü) hinzu, welches dir ermöglicht, Webseiten zu melden welche (noch) nicht von CookiesOK erkannt werden."
+		"message": "Mit dieser Option fügt CookiesOK einen Eintrag in das Kontextmenü (rechte Maustaste-Menü) hinzu, welches dir ermöglicht, Webseiten zu melden welche (noch) nicht von CookiesOK erkannt werden.",
+		"description": "Mit dieser Option fügt CookiesOK einen Eintrag in das Kontextmenü (rechte Maustaste-Menü) hinzu, welches dir ermöglicht, Webseiten zu melden welche (noch) nicht von CookiesOK erkannt werden."
 	},
 	"options_option_reporter_email": {
-		"message": "E-Mail-Adresse"
+		"message": "E-Mail-Adresse",
+		"description": "E-Mail-Adresse"
 	},
 	"options_option_reporter_email_description": {
-		"message": "Wenn vorhanden wird diese mit jeder Webseite, die du meldest, mitgesendet.  Du bekommst eine Bestätigungsmail nachdem die Meldung verarbeitet wurde."
+		"message": "Wenn vorhanden wird diese mit jeder Webseite, die du meldest, mitgesendet.  Du bekommst eine Bestätigungsmail nachdem die Meldung verarbeitet wurde.",
+		"description": "Wenn vorhanden wird diese mit jeder Webseite, die du meldest, mitgesendet.  Du bekommst eine Bestätigungsmail nachdem die Meldung verarbeitet wurde."
 	},
 	"options_message_initial_welcome_header": {
-		"message": "Willkommen!"
+		"message": "Willkommen!",
+		"description": "Willkommen!"
 	},
 	"options_message_initial_welcome_description": {
-		"message": "Danke für das Installieren von CookiesOK.  Das ist die Optionen-Seite, auf der du das Verhalten von CookiesOK einstellen kannst.\nDu kannst diese Seite über die Erweiterungen-Seite deines Webbrowsers erreichen.\nWenn du CookiesOK nützlich findest, erwäge bitte eine (kleine) Spende."
+		"message": "Danke für das Installieren von CookiesOK.  Das ist die Optionen-Seite, auf der du das Verhalten von CookiesOK einstellen kannst.\nDu kannst diese Seite über die Erweiterungen-Seite deines Webbrowsers erreichen.\nWenn du CookiesOK nützlich findest, erwäge bitte eine (kleine) Spende.",
+		"description": "Danke für das Installieren von CookiesOK.  Das ist die Optionen-Seite, auf der du das Verhalten von CookiesOK einstellen kannst.\nDu kannst diese Seite über die Erweiterungen-Seite deines Webbrowsers erreichen.\nWenn du CookiesOK nützlich findest, erwäge bitte eine (kleine) Spende."
 	},
 	"footer_donation_text": {
-		"message": "CookiesOK aktuell zu halten ist eine Menge Arbeit.  Es gibt ständig neue Webseiten und bestehende verändern sich häufig.  Wenn du CookiesOK verwendest, erwäge bitte eine Spende um uns dabei zu unterstützen und das Internet frei von jeglichen Cookie-Warnungen zu halten."
+		"message": "CookiesOK aktuell zu halten ist eine Menge Arbeit.  Es gibt ständig neue Webseiten und bestehende verändern sich häufig.  Wenn du CookiesOK verwendest, erwäge bitte eine Spende um uns dabei zu unterstützen und das Internet frei von jeglichen Cookie-Warnungen zu halten.",
+		"description": "CookiesOK aktuell zu halten ist eine Menge Arbeit.  Es gibt ständig neue Webseiten und bestehende verändern sich häufig.  Wenn du CookiesOK verwendest, erwäge bitte eine Spende um uns dabei zu unterstützen und das Internet frei von jeglichen Cookie-Warnungen zu halten."
 	},
 	"report_document_title": {
-		"message": "CookiesOK Webseite melden"
+		"message": "CookiesOK Webseite melden",
+		"description": "CookiesOK Webseite melden"
 	},
 	"report_field_url": {
-		"message": "URL der Webseite"
+		"message": "URL der Webseite",
+		"description": "URL der Webseite"
 	},
 	"report_field_url_description": {
-		"message": "Das ist die Adresse zur Webseite, in der CookiesOK nicht (korrekt) funktioniert.."
+		"message": "Das ist die Adresse zur Webseite, in der CookiesOK nicht (korrekt) funktioniert..",
+		"description": "Das ist die Adresse zur Webseite, in der CookiesOK nicht (korrekt) funktioniert.."
 	},
 	"report_field_email": {
-		"message": "E-Mail-Adresse"
+		"message": "E-Mail-Adresse",
+		"description": "E-Mail-Adresse"
 	},
 	"report_field_email_description": {
-		"message": "Nicht erforderlich.  Wenn vorhanden senden wir dir eine E-Mail nachdem deine Meldung verarbeitet wurde."
+		"message": "Nicht erforderlich.  Wenn vorhanden senden wir dir eine E-Mail nachdem deine Meldung verarbeitet wurde.",
+		"description": "Nicht erforderlich.  Wenn vorhanden senden wir dir eine E-Mail nachdem deine Meldung verarbeitet wurde."
 	},
 	"report_field_additional_notes": {
-		"message": "Zusätzliche Bemerkungen"
+		"message": "Zusätzliche Bemerkungen",
+		"description": "Zusätzliche Bemerkungen"
 	},
 	"report_field_additional_notes_description": {
-		"message": "Was wir sonst noch wissen sollten wenn wir deine Meldung überprüfen"
+		"message": "Was wir sonst noch wissen sollten wenn wir deine Meldung überprüfen",
+		"description": "Was wir sonst noch wissen sollten wenn wir deine Meldung überprüfen"
 	},
 	"report_message_thank_you_header": {
-		"message": "Danke!"
+		"message": "Danke!",
+		"description": "Danke!"
 	},
 	"report_message_thank_you_description": {
-		"message": "Die URL wurde gemeldet.  Wir werden diese schnellstmöglich überprüfen."
+		"message": "Die URL wurde gemeldet.  Wir werden diese schnellstmöglich überprüfen.",
+		"description": "Die URL wurde gemeldet.  Wir werden diese schnellstmöglich überprüfen."
 	},
 	"report_message_thank_you_anoter_url": {
-		"message": "Eine weitere URL melden"
+		"message": "Eine weitere URL melden",
+		"description": "Eine weitere URL melden"
 	},
 	"report_submit_button": {
-		"message": "Meldung absenden"
+		"message": "Meldung absenden",
+		"description": "Meldung absenden"
 	}
 }

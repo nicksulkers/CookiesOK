@@ -1,7 +1,86 @@
 var paused = false;
-
 var options = {};
 var database = {};
+
+var storageContainer = chrome.storage.sync || chrome.storage.local; //sync is not (yet) supported in firefox
+
+function init(){
+	storageContainer.get('database', function(data){
+		if(!data.database || isTooOld(data.database.updated))
+			downloadDatabase(function(success, data){
+				if(success){
+					database.websites = data;
+					database.updated = new Date();
+				}else database = data.database; //should the server ever face some downtime
+			});
+		else
+			database = data.database;
+	});
+
+	storageContainer.get('options', function(values){
+		if(values.options) options = values.options;
+
+		if(chrome.contextMenus){ //not supported in Firefox for android
+			chrome.contextMenus.removeAll(function(){
+				if(options['contextmenu'] !== false){ //undefined OR true
+					chrome.contextMenus.create({
+						id: "CookiesOK_report",
+						title: chrome.i18n.getMessage("context_menu_report_text"),
+						contexts: ["page"],
+						onclick: function(info){
+							chrome.tabs.create({'url': chrome.extension.getURL('pages/report/index.html?url=' + escape(info.pageUrl))});
+						}
+					});
+				}
+			});
+		}
+	});
+}
+
+chrome.webRequest.onBeforeSendHeaders.addListener(
+	function(details){
+		if(!paused)
+			details.requestHeaders.push({name: "X-CookiesOK", value: "I explicitly accept all cookies"})
+		return {requestHeaders: details.requestHeaders};
+	},
+	{urls: ["http://*/*", "https://*/*"]},
+	["blocking", "requestHeaders"]
+);
+
+//not (yet) supported by FireFox
+chrome.runtime.onInstalled && chrome.runtime.onInstalled.addListener(function(details){
+	if(details.reason == "install"){
+		chrome.tabs.create({'url': chrome.extension.getURL('pages/options/index.html?initial')});
+	}
+});
+
+chrome.runtime.onMessage.addListener(function(request, sender, sendResponse){
+	if(paused){
+		sendResponse({success: false});
+		return;
+	}
+	switch(request.action){
+		case "getDomainOrders":
+			var hostname = request.hostname;
+			if(hostname.indexOf('www.') === 0)
+				hostname = hostname.substr(4);
+
+			var orders = database.websites.data[hostname];
+			if(!orders && hostname.match('.')){
+				var tmpHostname = hostname.split(".");
+				tmpHostname[0] = '*';
+				tmpHostname = tmpHostname.join('.');
+				orders = database.websites.data[tmpHostname];
+			}
+
+			if(orders)
+				sendResponse({success: true, orders: orders});
+			else
+				sendResponse({success: false});
+			break;
+	}
+});
+
 
 function setPaused(value){
 	paused = value;
@@ -38,85 +117,4 @@ function isTooOld(date){
 	return timePassed > msInDay;
 }
 
-chrome.storage.sync.get('database', function(data){
-	if(!data.database || isTooOld(data.database.updated))
-		downloadDatabase(function(success, data){
-			if(success){
-				database.websites = data;
-				database.updated = new Date();
-			}else database = data.database; //should the server ever face some downtime
-		});
-	else
-		database = data.database;
-});
-
-
-chrome.storage.sync.get('options', function(values){
-	if(values.options) options = values.options;
-
-	if(options['contextmenu'] !== false){ //undefined OR true
-		try{
-			chrome.contextMenus.create({
-				id: "CookiesOK_report",
-				title: chrome.i18n.getMessage("context_menu_report_text"),
-				contexts: ["page"],
-				onclick: function(info){
-					chrome.tabs.create({'url': chrome.extension.getURL('pages/report/index.html?url=' + escape(info.pageUrl))});
-				}
-			});
-		}catch(ex){
-		}
-	}else{
-		try{
-			chrome.contextMenus.remove("CookiesOK_report", function(){
-			});
-		}catch(ex){
-		}
-	}
-});
-
-//Send along a X-CookiesOK HTTP header
-//this allows websites to recognize CookiesOK and assume consent
-chrome.webRequest.onBeforeSendHeaders.addListener(
-	function(details){
-		details.requestHeaders.push({name: "X-CookiesOK", value: "I explicitly accept all cookies"})
-		return {requestHeaders: details.requestHeaders};
-	},
-	{urls: ["http://*/*", "https://*/*"]},
-	["blocking", "requestHeaders"]
-);
-
-chrome.runtime.onInstalled.addListener(function(details){
-	if(details.reason == "install"){
-		chrome.tabs.create({'url': chrome.extension.getURL('pages/options/index.html?initial')});
-	}else if(details.reason == "update"){
-		//chrome.tabs.create({'url': chrome.extension.getURL('pages/options/index.html?upgradeFrom=' + escape(details.previousVersion))});
-	}
-});
-
-chrome.runtime.onMessage.addListener(function(request, sender, sendResponse){
-	if(paused){
-		sendResponse({success: false});
-		return;
-	}
-	switch(request.action){
-		case "getDomainOrders":
-			var hostname = request.hostname;
-			if(hostname.indexOf('www.') === 0)
-				hostname = hostname.substr(4);
-
-			var orders = database.websites[hostname];
-			if(!orders && hostname.match('.')){
-				var tmpHostname = hostname.split(".");
-				tmpHostname[0] = '*';
-				tmpHostname = tmpHostname.join('.');
-				orders = database.websites[tmpHostname];
-			}
-
-			if(orders)
-				sendResponse({success: true, orders: orders});
-			else
-				sendResponse({success: false});
-			break;
-	}
-});
+init();
