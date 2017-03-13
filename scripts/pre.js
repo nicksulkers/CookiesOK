@@ -10,7 +10,7 @@ var hideStyles = [];
 
 	chrome.runtime.sendMessage({"action": "getDomainOrders", "hostname": location.hostname}, function(result){
 		getDomainOrdersComplete = true;
-		if(!result.success)
+		if(!result || !result.success)
 			return;
 
 		orders = result.orders;
